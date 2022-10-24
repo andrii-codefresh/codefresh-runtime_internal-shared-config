@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: codefresh-hosted-managed-cluster-arn-aws-eks-us-east-1-882458141806-cluster-cd-t-prod-cm
+  labels:
+    app.kubernetes.io/managed-by: codefresh
+data: 
+  managed-by-runtime: codefresh-hosted
