@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: test-permissions-git-source-prod
   labels:
-    codefresh.io/entity: 'git-source'
+    codefresh.io/entity: git-source
     codefresh.io/internal: 'false'
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -12,9 +12,9 @@ spec:
   source:
     repoURL: https://github.com/andrii-codefresh/test-permissions-git-source-prod.git
     path: .
-    targetRevision: HEAD
+    targetRevision: main
     directory:
-      include: '*'
+      include: ''
       exclude: ''
       recurse: true
   destination:
