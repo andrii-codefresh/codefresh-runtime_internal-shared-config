@@ -1,10 +1,15 @@
 gitops-runtime:
   global:
     codefresh:
-      accountId: 5b61a5a532fb5b0001d14a73
-      userToken:
+      url: "https://andriicf-platform.ngrok.io"
+      accountId: 6365495094c7820be5a4544d
+      userToken: 
         secretKeyRef:
           name: codefresh-user-token
           key: token
     runtime:
       name: local52
+  argo-cd:
+    server:
+      service:
+        type: LoadBalancer
