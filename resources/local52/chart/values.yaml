@@ -1,7 +1,7 @@
 gitops-runtime:
   global:
     codefresh:
-      url: "https://andriicf-platform.ngrok.io"
+      url: "http://andriicf-platform.ngrok.io"
       accountId: 6365495094c7820be5a4544d
       userToken: 
         secretKeyRef:
