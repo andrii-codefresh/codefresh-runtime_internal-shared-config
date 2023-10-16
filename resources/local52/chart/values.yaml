@@ -13,3 +13,7 @@ gitops-runtime:
     server:
       service:
         type: LoadBalancer
+  event-reporters:
+   events:
+     argoCDServerServiceName: "4.tcp.eu.ngrok.io"
+     argoCDServerServicePort: "16584"
