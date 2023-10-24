@@ -16,4 +16,4 @@ gitops-runtime:
   event-reporters:
    events:
      argoCDServerServiceName: "4.tcp.eu.ngrok.io"
-     argoCDServerServicePort: "16584"
+     argoCDServerServicePort: "14923"
