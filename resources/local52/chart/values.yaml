@@ -9,6 +9,9 @@ gitops-runtime:
           key: token
     runtime:
       name: local52
+      ingress:
+        hosts:
+          - "http://andriicf-ingresshost.ngrok.io"
   argo-cd:
     server:
       service:
@@ -17,3 +20,6 @@ gitops-runtime:
    events:
      argoCDServerServiceName: "6.tcp.eu.ngrok.io"
      argoCDServerServicePort: "13008"
+  app-proxy:
+    config:
+      argoCdUrl: http://6.tcp.eu.ngrok.io:13008
