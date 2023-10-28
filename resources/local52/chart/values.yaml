@@ -9,9 +9,7 @@ gitops-runtime:
           key: token
     runtime:
       name: local52
-      ingress:
-        hosts:
-          - "http://andriicf-ingresshost.ngrok.io"
+      ingressUrl: "http://andriicf-ingresshost.ngrok.io"
   argo-cd:
     server:
       service:
