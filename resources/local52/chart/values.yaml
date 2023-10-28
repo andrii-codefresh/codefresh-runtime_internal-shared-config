@@ -21,3 +21,5 @@ gitops-runtime:
   app-proxy:
     config:
       argoCdUrl: http://6.tcp.eu.ngrok.io:13008
+  tunnel-client:
+    enabled: false
