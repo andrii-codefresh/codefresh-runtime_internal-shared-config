@@ -16,10 +16,10 @@ gitops-runtime:
         type: LoadBalancer
   event-reporters:
    events:
-     argoCDServerServiceName: "7.tcp.eu.ngrok.io"
-     argoCDServerServicePort: "14365"
+     argoCDServerServiceName: "4.tcp.eu.ngrok.io"
+     argoCDServerServicePort: "15474"
   app-proxy:
     config:
-      argoCdUrl: http://7.tcp.eu.ngrok.io:14365
+      argoCdUrl: http://4.tcp.eu.ngrok.io:15474
   tunnel-client:
     enabled: false
