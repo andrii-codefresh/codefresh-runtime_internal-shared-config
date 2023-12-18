@@ -8,3 +8,15 @@ gitops-runtime:
           key: token
     runtime:
       name: test-audit
+#-----------------------------------------------------------------------------------------------------------------------
+# app-proxy
+#-----------------------------------------------------------------------------------------------------------------------
+app-proxy:
+  image:
+    repository: quay.io/codefresh/cap-app-proxy
+    tag: 1.2566.1
+
+  initContainer:
+    image:
+      repository: quay.io/codefresh/cap-app-proxy-init
+      tag: 1.2566.1
