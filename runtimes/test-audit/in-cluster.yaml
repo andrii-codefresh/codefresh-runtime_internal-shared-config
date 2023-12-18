@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/test-audit/*.yaml,runtimes/test-audit/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,test-audit/cf-gitops-runtime.yaml}
+        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/test-audit/*.yaml,runtimes/test-audit/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,test-audit/cf-gitops-runtime.yaml,test-audit/gs.yaml}
       recurse: true
     path: resources
     repoURL: >-
