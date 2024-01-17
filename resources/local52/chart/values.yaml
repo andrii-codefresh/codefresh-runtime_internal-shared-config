@@ -10,6 +10,15 @@ gitops-runtime:
     runtime:
       name: local52
       ingressUrl: "http://andriicf-ingresshost.ngrok.io"
+
+  # -------------------------------------------------------------------------------------------------------------------------
+  # Installer
+  # -------------------------------------------------------------------------------------------------------------------------
+  # -- Runtime installer used for running hooks and checks on the release
+  installer:
+    # -- if set to true, pre-install hook will *not* run
+    skipValidation: true
+
   argo-cd:
     server:
       service:
