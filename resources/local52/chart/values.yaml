@@ -4,10 +4,9 @@ gitops-runtime:
       url: "https://andriicf-platform.ngrok.io"
       accountId: 6365495094c7820be5a4544d
       userToken: 
-        token: "65a7a37bc19f8a01ce9aaa3e.c3c4ef518655d3f93fc96a921c9ea613"
-        # secretKeyRef:
-        #   name: codefresh-user-token
-        #   key: token
+        secretKeyRef:
+          name: codefresh-user-token
+          key: token
     runtime:
       name: local52
       ingressUrl: "http://andriicf-ingresshost.ngrok.io"
@@ -29,7 +28,7 @@ gitops-runtime:
   #    argoCDServerServiceName: "4.tcp.eu.ngrok.io"
   #    argoCDServerServicePort: "15474"
   app-proxy:
-    replicaCount: 0
+    replicaCount: 1
   #   config:
   #     argoCdUrl: http://4.tcp.eu.ngrok.io:15474
   tunnel-client:
