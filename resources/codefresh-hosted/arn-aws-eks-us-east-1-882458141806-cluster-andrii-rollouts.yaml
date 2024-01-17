@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: arn-aws-eks-us-east-1-882458141806-cluster-andrii-rollouts
+  labels:
+    codefresh.io/entity: component
+    codefresh.io/internal: "false"
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: csdp
+  source:
+    chart: argo-rollouts
+    repoURL: https://codefresh-io.github.io/argo-helm
+    targetRevision: 2.22.1-1-cap-sw
+    helm:
+      releaseName: argo-rollouts
+  destination:
+    namespace: default
+    server: https://5989E3AC0A1D5014222050D5D5995B87.gr7.us-east-1.eks.amazonaws.com
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
