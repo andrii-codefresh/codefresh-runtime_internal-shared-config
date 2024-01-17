@@ -9,7 +9,7 @@ gitops-runtime:
           key: token
     runtime:
       name: local52
-      ingressUrl: "http://andriicf-ingresshost.ngrok.io"
+      ingressUrl: "https://andriicf-ingresshost.ngrok.io"
 
   # -------------------------------------------------------------------------------------------------------------------------
   # Installer
