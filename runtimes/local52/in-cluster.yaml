@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,docker/integration.config.yaml,docker/integration.secret.yaml,jira/integration.config.yaml,jira/integration.secret.yaml,local52/cf-gitops-runtime.yaml,local52/local52-gs.yaml,runtimes/local52/**/*.yaml,runtimes/local52/*.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,jira/integration.config.yaml,jira/integration.secret.yaml,local52/cf-gitops-runtime.yaml,local52/local52-gs.yaml,runtimes/local52/**/*.yaml,runtimes/local52/*.yaml}
       recurse: true
     path: resources
     repoURL: >-
