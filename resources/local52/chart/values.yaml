@@ -3,7 +3,7 @@ gitops-runtime:
     codefresh:
       url: "https://andriicf-platform.ngrok.io"
       accountId: 6365495094c7820be5a4544d
-      userToken: 
+      userToken:
         secretKeyRef:
           name: codefresh-user-token
           key: token
@@ -23,13 +23,33 @@ gitops-runtime:
     server:
       service:
         type: LoadBalancer
-  # event-reporters:
-  #  events:
-  #    argoCDServerServiceName: "4.tcp.eu.ngrok.io"
-  #    argoCDServerServicePort: "15474"
+  event-reporters:
+    events:
+      argoCDServerServiceName: "6.tcp.eu.ngrok.io"
+      argoCDServerServicePort: "13770"
   app-proxy:
     replicaCount: 0
-  #   config:
-  #     argoCdUrl: http://4.tcp.eu.ngrok.io:15474
+#    config:
+#      argoCdUrl: http://6.tcp.eu.ngrok.io:13770
   tunnel-client:
     enabled: false
+
+## Application controller
+controller:
+  # -- The number of application controller pods to run.
+  # Additional replicas will cause sharding of managed clusters across number of replicas.
+  replicas: 0
+
+## Server
+server:
+  # -- The number of server pods to run
+  replicas: 0
+
+## Repo Server
+repoServer:
+  # -- The number of repo server pods to run
+  replicas: 0
+
+eventReporter:
+  ## Amount of replicas for event reporting sharding
+  replicas: 0
