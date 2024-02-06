@@ -22,9 +22,9 @@ spec:
       https://github.com/andrii-codefresh/codefresh-runtime_internal-shared-config.git
     targetRevision: HEAD
   syncPolicy:
-    automated:
-      allowEmpty: true
-      prune: true
-      selfHeal: false
+#    automated:
+#      allowEmpty: true
+#      prune: true
+#      selfHeal: false
     syncOptions:
       - allowEmpty=true
