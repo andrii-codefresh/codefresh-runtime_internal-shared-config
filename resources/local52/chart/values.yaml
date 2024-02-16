@@ -23,10 +23,10 @@ gitops-runtime:
     server:
       service:
         type: LoadBalancer
-  event-reporters:
-    events:
-      argoCDServerServiceName: "0.tcp.eu.ngrok.io"
-      argoCDServerServicePort: "14415"
+#  event-reporters:
+#    events:
+#      argoCDServerServiceName: "0.tcp.eu.ngrok.io"
+#      argoCDServerServicePort: "14415"
   app-proxy:
     replicaCount: 0
 #    config:
@@ -38,17 +38,17 @@ gitops-runtime:
 controller:
   # -- The number of application controller pods to run.
   # Additional replicas will cause sharding of managed clusters across number of replicas.
-  replicas: 0
+  replicas: 1
 
 ## Server
 server:
   # -- The number of server pods to run
-  replicas: 0
+  replicas: 1
 
 ## Repo Server
 repoServer:
   # -- The number of repo server pods to run
-  replicas: 0
+  replicas: 1
 
 eventReporter:
   ## Amount of replicas for event reporting sharding
