@@ -25,9 +25,9 @@ gitops-runtime:
         type: LoadBalancer
     applicationVersioning:
       # -- enables the Codefresh application versioning feature
-      enabled: false
+      enabled: true
       # -- use ApplicationConfiguration CRD to manage application versioning
-      useApplicationConfiguration: false
+      useApplicationConfiguration: true
 #  event-reporters:
 #    events:
 #      argoCDServerServiceName: "0.tcp.eu.ngrok.io"
