@@ -5,5 +5,5 @@ name: codefresh-gitops-runtime
 version: 0.4.6
 dependencies:
   - name: gitops-runtime
-    repository: https://chartmuseum-dev.codefresh.io/gitops-runtime
+    repository: oci://quay.io/codefresh
     version: 0.4.6
