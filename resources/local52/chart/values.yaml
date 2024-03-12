@@ -20,8 +20,6 @@ gitops-runtime:
     skipValidation: true
 
   argo-cd:
-    image:
-      tag: "v2.9-2024.3.12-b23aa3fb6"
     server:
       service:
         type: LoadBalancer
@@ -46,16 +44,22 @@ controller:
   # -- The number of application controller pods to run.
   # Additional replicas will cause sharding of managed clusters across number of replicas.
   replicas: 1
+  image:
+    tag: "v2.9-2024.3.12-b23aa3fb6"
 
 ## Server
 server:
   # -- The number of server pods to run
   replicas: 1
+  image:
+    tag: "v2.9-2024.3.12-b23aa3fb6"
 
 ## Repo Server
 repoServer:
   # -- The number of repo server pods to run
   replicas: 1
+  image:
+    tag: "v2.9-2024.3.12-b23aa3fb6"
 
 eventReporter:
   ## Amount of replicas for event reporting sharding
