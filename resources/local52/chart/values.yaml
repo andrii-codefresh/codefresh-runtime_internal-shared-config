@@ -10,6 +10,8 @@ gitops-runtime:
     runtime:
       name: local52
       ingressUrl: "https://andriicf-ingresshost.ngrok.io"
+    image:
+      tag: "v2.9-2024.3.12-b23aa3fb6"
 
   # -------------------------------------------------------------------------------------------------------------------------
   # Installer
