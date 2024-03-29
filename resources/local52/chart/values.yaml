@@ -23,7 +23,7 @@ gitops-runtime:
     server:
       service:
         type: LoadBalancer
-      replicas: 1
+      replicas: 0
 #      image:
 #        tag: "v2.9-2024.3.12-b23aa3fb6"
 
@@ -31,14 +31,14 @@ gitops-runtime:
     controller:
       # -- The number of application controller pods to run.
       # Additional replicas will cause sharding of managed clusters across number of replicas.
-      replicas: 1
+      replicas: 0
 #      image:
 #        tag: "v2.9-2024.3.12-b23aa3fb6"
 
     ## Repo Server
     repoServer:
       # -- The number of repo server pods to run
-      replicas: 1
+      replicas: 0
 #      image:
 #        tag: "v2.9-2024.3.12-b23aa3fb6"
 
