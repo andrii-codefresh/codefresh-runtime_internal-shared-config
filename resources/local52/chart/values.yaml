@@ -54,8 +54,8 @@ gitops-runtime:
 
   event-reporters:
     events:
-      argoCDServerServiceName: "5.tcp.eu.ngrok.io"
-      argoCDServerServicePort: "13233"
+      argoCDServerServiceName: "6.tcp.eu.ngrok.io"
+      argoCDServerServicePort: "16651"
   app-proxy:
     replicaCount: 0
 #    config:
