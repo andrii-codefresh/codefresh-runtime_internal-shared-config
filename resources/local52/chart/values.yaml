@@ -54,10 +54,10 @@ gitops-runtime:
       # -- use ApplicationConfiguration CRD to manage application versioning
       useApplicationConfiguration: true
 
-  event-reporters:
-    events:
-      argoCDServerServiceName: "6.tcp.eu.ngrok.io"
-      argoCDServerServicePort: "16651"
+#  event-reporters:
+#    events:
+#      argoCDServerServiceName: "6.tcp.eu.ngrok.io"
+#      argoCDServerServicePort: "16651"
   app-proxy:
     replicaCount: 0
 #    config:
