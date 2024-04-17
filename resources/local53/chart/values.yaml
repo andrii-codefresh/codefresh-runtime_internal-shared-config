@@ -1,0 +1,25 @@
+gitops-runtime:
+  app-proxy:
+    config:
+      cors: http://local.codefresh.io
+  event-reporters:
+    workflow:
+      serviceAccount:
+        name: codefresh-sa
+  global:
+    codefresh:
+      url: https://andriicf-platform.ngrok.io
+      userToken:
+        secretKeyRef:
+          name: codefresh-user-token
+          key: token
+    runtime:
+      ingress:
+        className: nginx-internal
+        enabled: true
+        hosts:
+          - dionysus-andrii.rnd-sandbox.cf-infra.com
+        protocol: https
+      name: local53
+  installer:
+    skipValidation: true
