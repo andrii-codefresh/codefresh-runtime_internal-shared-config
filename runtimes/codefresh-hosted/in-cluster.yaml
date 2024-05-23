@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/codefresh-hosted/*.yaml,runtimes/codefresh-hosted/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,codefresh-hosted/codefresh-runtime-applications.yaml,codefresh-hosted/arn-aws-eks-us-east-1-454353560595-cluster-andrii-demo-rollouts.yaml,codefresh-hosted/arn-aws-eks-us-east-1-454353560595-cluster-andrii-demo-rollout-reporter.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,codefresh-hosted/arn-aws-eks-us-east-1-454353560595-cluster-andrii-demo-rollout-reporter.yaml,codefresh-hosted/arn-aws-eks-us-east-1-454353560595-cluster-andrii-demo-rollouts.yaml,codefresh-hosted/codefresh-runtime-applications.yaml,control-planes/**/*.yaml,control-planes/*.yaml,runtimes/codefresh-hosted/**/*.yaml,runtimes/codefresh-hosted/*.yaml}
       recurse: true
     path: resources
     repoURL: >-
