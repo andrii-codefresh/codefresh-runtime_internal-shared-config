@@ -5,7 +5,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
   labels:
     codefresh.io/entity: internal-config
-    codefresh.io/internal: "true"
+    codefresh.io/internal: 'true'
   name: in-cluster
 spec:
   destination:
@@ -14,10 +14,12 @@ spec:
   project: default
   source:
     directory:
-      include: '{all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/local55/*.yaml,runtimes/local55/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml}'
+      include: >-
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,runtimes/local55/**/*.yaml,runtimes/local55/*.yaml}
       recurse: true
     path: resources
-    repoURL: https://github.com/andrii-codefresh/codefresh-runtime_internal-shared-config.git
+    repoURL: >-
+      https://github.com/andrii-codefresh/codefresh-runtime_internal-shared-config.git
     targetRevision: HEAD
   syncPolicy:
     automated:
@@ -25,4 +27,4 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-    - allowEmpty=true
+      - allowEmpty=true
