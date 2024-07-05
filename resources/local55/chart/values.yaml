@@ -12,11 +12,12 @@ gitops-runtime:
           name: codefresh-user-token
           key: token
     runtime:
-      ingress:
-        className: nginx-internal
-        enabled: true
-        hosts:
-          - local55-runtime.rnd-sandbox.cf-infra.com
+#      ingress:
+#        className: nginx-internal
+#        enabled: true
+#        hosts:
+#          - local55-runtime.rnd-sandbox.cf-infra.com
       name: local55
+      ingressUrl: "https://andriicf-ingresshost.ngrok.io"
   installer:
     skipValidation: true
