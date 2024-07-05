@@ -4,7 +4,7 @@ gitops-runtime:
       replicaCount: 0
       env:
         cors: >-
-          http://local.codefresh.io,localhost:3017,http://andriicf-ingresshost.ngrok.io,http://andriicf-platform.ngrok.io
+          http://local.codefresh.io/,localhost:3017,http://andriicf-ingresshost.ngrok.io,http://andriicf-platform.ngrok.io
     codefresh:
       accountId: 6365495094c7820be5a4544d
       url: https://andriicf-platform.ngrok.io
