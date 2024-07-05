@@ -1,6 +1,7 @@
 gitops-runtime:
   global:
     app-proxy:
+      replicaCount: 0
       env:
         cors: >-
           http://local.codefresh.io,localhost:3017,http://andriicf-ingresshost.ngrok.io,http://andriicf-platform.ngrok.io
