@@ -1,12 +1,5 @@
 gitops-runtime:
   global:
-    app-proxy:
-#      replicaCount: 0
-      config:
-        cors: http://local.codefresh.io
-#      env:
-#        cors: >-
-#          http://local.codefresh.io,localhost:3017,http://andriicf-ingresshost.ngrok.io,http://andriicf-platform.ngrok.io
     codefresh:
       accountId: 6365495094c7820be5a4544d
       url: https://andriicf-platform.ngrok.io
@@ -22,5 +15,12 @@ gitops-runtime:
           - local55-runtime.rnd-sandbox.cf-infra.com
       name: local55
 #      ingressUrl: "https://andriicf-ingresshost.ngrok.io"
+  app-proxy:
+    #      replicaCount: 0
+    config:
+      cors: http://local.codefresh.io
+#      env:
+#        cors: >-
+#          http://local.codefresh.io,localhost:3017,http://andriicf-ingresshost.ngrok.io,http://andriicf-platform.ngrok.io
   installer:
     skipValidation: true
