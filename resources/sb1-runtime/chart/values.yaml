@@ -1,0 +1,21 @@
+gitops-runtime:
+  global:
+    app-proxy:
+      config:
+        cors: https://sandbox-1.codefresh.io
+    codefresh:
+      accountId: 6695321785b1f522447e7412
+      url: https://sandbox-1.codefresh.io
+      userToken:
+        secretKeyRef:
+          name: codefresh-user-token
+          key: token
+    runtime:
+      ingress:
+        className: nginx-internal
+        enabled: true
+        hosts:
+          - sb1-runtime-runtime.rnd-sandbox.cf-infra.com
+      name: sb1-runtime
+  installer:
+    skipValidation: true
