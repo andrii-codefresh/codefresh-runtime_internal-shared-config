@@ -2,8 +2,8 @@ apiVersion: v2
 appVersion: 1.0.0
 description: Codefresh gitops runtime umbrella chart
 name: codefresh-gitops-runtime
-version: 0.9.0
+version: 0.0.0-feat-app-proxy-abac-audit-60d3335
 dependencies:
   - name: gitops-runtime
-    repository: oci://quay.io/codefresh
-    version: 0.9.0
+    repository: oci://quay.io/codefresh/dev
+    version: 0.0.0-feat-app-proxy-abac-audit-60d3335
