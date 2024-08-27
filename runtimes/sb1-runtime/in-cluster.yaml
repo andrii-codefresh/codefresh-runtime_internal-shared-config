@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,runtimes/sb1-runtime/**/*.yaml,runtimes/sb1-runtime/*.yaml,sb1-runtime/apps2.yaml,sb1-runtime/apps4.yaml,sb1-runtime/apps5.yaml,sb1-runtime/cf-gitops-runtime.yaml,sb1-runtime/gitsource.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,runtimes/sb1-runtime/**/*.yaml,runtimes/sb1-runtime/*.yaml,sb1-runtime/apps2.yaml,sb1-runtime/apps4.yaml,sb1-runtime/apps5.yaml,sb1-runtime/cf-gitops-runtime.yaml,sb1-runtime/denis-sandbox-gitsource.yaml,sb1-runtime/gitsource.yaml}
       recurse: true
     path: resources
     repoURL: >-
