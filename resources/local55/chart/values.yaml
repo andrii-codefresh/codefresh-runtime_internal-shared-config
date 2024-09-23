@@ -23,3 +23,43 @@ gitops-runtime:
     skipValidation: true
   tunnel-client:
     enabled: false
+
+  argo-cd:
+    server:
+      service:
+        type: LoadBalancer
+      replicas: 0
+    #      image:
+    #        tag: "v2.9-2024.3.12-b23aa3fb6"
+
+    ## Application controller
+    controller:
+      # -- The number of application controller pods to run.
+      # Additional replicas will cause sharding of managed clusters across number of replicas.
+      replicas: 0
+    #      image:
+    #        tag: "v2.9-2024.3.12-b23aa3fb6"
+
+    ## Repo Server
+    repoServer:
+      # -- The number of repo server pods to run
+      replicas: 0
+    #      image:
+    #        tag: "v2.9-2024.3.12-b23aa3fb6"
+
+
+
+    eventReporter:
+      ## Amount of replicas for event reporting sharding
+      replicas: 0
+
+    applicationVersioning:
+      # -- enables the Codefresh application versioning feature
+      enabled: true
+      # -- use ApplicationConfiguration CRD to manage application versioning
+      useApplicationConfiguration: true
+
+    event-reporters:
+      events:
+        argoCDServerServiceName: "5.tcp.eu.ngrok.io"
+        argoCDServerServicePort: "10258"
