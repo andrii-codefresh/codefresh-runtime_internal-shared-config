@@ -21,3 +21,5 @@ gitops-runtime:
       ingressUrl: "https://andriicf-ingresshost.ngrok.io"
   installer:
     skipValidation: true
+  tunnel-client:
+    enabled: false
