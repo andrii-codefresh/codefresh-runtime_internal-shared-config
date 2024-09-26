@@ -16,7 +16,7 @@ gitops-runtime:
         className: nginx-internal
         enabled: true
         hosts:
-          - local7-runtime.rnd-sandbox.cf-infra.com
+          - https://andriicf-ingresshost.ngrok.io
       name: local7
   installer:
     skipValidation: true
