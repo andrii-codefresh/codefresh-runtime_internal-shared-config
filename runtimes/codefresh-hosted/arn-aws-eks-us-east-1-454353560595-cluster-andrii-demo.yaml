@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    codefresh.io/entity: internal-config
+    codefresh.io/internal: "true"
+  name: arn-aws-eks-us-east-1-454353560595-cluster-andrii-demo
+spec:
+  destination:
+    namespace: codefresh-hosted
+    server: https://2F407BEB0B1520B2B86B0B0ADC2AAB25.yl4.us-east-1.eks.amazonaws.com
+  project: default
+  source:
+    directory:
+      include: '{all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/codefresh-hosted/*.yaml,runtimes/codefresh-hosted/**/*.yaml}'
+      recurse: true
+    path: resources
+    repoURL: https://github.com/andrii-codefresh/codefresh-runtime_internal-shared-config.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - allowEmpty=true
