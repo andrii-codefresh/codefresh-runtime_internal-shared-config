@@ -51,7 +51,7 @@ gitops-runtime:
 
     eventReporter:
       ## Amount of replicas for event reporting sharding
-      replicas: 1
+      replicas: 0
 
     applicationVersioning:
       # -- enables the Codefresh application versioning feature
