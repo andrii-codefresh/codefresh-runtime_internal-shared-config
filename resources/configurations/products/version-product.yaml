@@ -1,0 +1,9 @@
+apiVersion: codefresh.io/v1beta1
+kind: Product
+metadata:
+  name: version-product
+spec:
+  promotionTemplate:
+    versionSource:
+      file: versionSource.json
+      jsonPath: $.parent.many[?(@.name == "first")].versionNumber
