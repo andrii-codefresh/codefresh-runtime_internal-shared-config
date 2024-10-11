@@ -5,5 +5,5 @@ name: codefresh-gitops-runtime
 version: 0.0.0-feat-cr-23204-synced-version
 dependencies:
   - name: gitops-runtime
-    repository: oci://quay.io/codefresh/dev/gitops-runtime
+    repository: oci://quay.io/codefresh/dev
     version: 0.0.0-feat-cr-23204-synced-version
