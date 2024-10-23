@@ -6,4 +6,4 @@ spec:
   promotionTemplate:
     versionSource:
       file: versionSource.json
-      jsonPath: $.parent.many[?(@.name == "second")].versionNumber
+      jsonPath: $.parent.many[1].versionNumber
