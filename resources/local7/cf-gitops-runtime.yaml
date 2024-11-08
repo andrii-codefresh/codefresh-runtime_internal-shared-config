@@ -5,6 +5,7 @@ metadata:
   labels:
     codefresh.io/entity: runtime
     codefresh.io/internal: 'true'
+    codefresh.io/runtime-health: 'true'
 spec:
   project: default
   source:
