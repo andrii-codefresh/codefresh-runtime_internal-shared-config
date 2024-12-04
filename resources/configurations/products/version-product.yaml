@@ -5,5 +5,5 @@ metadata:
 spec:
   promotionTemplate:
     versionSource:
-      file: valuesa.yaml
+      file: values.yaml
       jsonPath: $.Big-Name.image.tag
