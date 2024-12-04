@@ -5,5 +5,5 @@ metadata:
 spec:
   promotionTemplate:
     versionSource:
-      file: versionSource.json
-      jsonPath: $.parent.many[1].versionNumber
+      file: values.yaml
+      jsonPath: $.Big-Name.image.tag
