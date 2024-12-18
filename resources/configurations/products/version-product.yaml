@@ -6,4 +6,4 @@ spec:
   promotionTemplate:
     versionSource:
       file: values.yaml
-      jsonPath: 234.value
+      jsonPath: $.234.value
