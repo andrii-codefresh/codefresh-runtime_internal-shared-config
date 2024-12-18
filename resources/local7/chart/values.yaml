@@ -59,8 +59,10 @@ gitops-runtime:
         repository: "andriicodefresh/argocd"
         tag: "reporter"
       env:
-        SOURCES_SERVER_ENABLED: "true"
-        SOURCES_SERVER_BASE_URL: "http://sources-server:8090"
+        - name: SOURCES_SERVER_ENABLED
+          value: "true"
+        - name: SOURCES_SERVER_BASE_URL
+          value: "http://sources-server:8090"
 
     applicationVersioning:
       # -- enables the Codefresh application versioning feature
