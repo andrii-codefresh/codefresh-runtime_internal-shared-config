@@ -6,4 +6,4 @@ spec:
   promotionTemplate:
     versionSource:
       file: values.yaml
-      jsonPath: $.Big-Name.image.tag
+      jsonPath: $.234.value
