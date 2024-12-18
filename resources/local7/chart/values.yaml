@@ -57,7 +57,7 @@ gitops-runtime:
       replicas: 1
       image:
         repository: "andriicodefresh/argocd"
-        tag: "reporter"
+        tag: "reporter-1"
       env:
         - name: SOURCES_SERVER_ENABLED
           value: "true"
