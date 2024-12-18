@@ -62,7 +62,7 @@ gitops-runtime:
         - name: SOURCES_SERVER_ENABLED
           value: "true"
         - name: SOURCES_SERVER_BASE_URL
-          value: "http://sources-server:8090"
+          value: "http://sources-server"
 
     applicationVersioning:
       # -- enables the Codefresh application versioning feature
