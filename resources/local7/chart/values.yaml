@@ -29,40 +29,37 @@ gitops-runtime:
       service:
         type: LoadBalancer
       replicas: 1
-      image:
-        repository: "andriicodefresh/argocd"
-        tag: "reporter"
+#      image:
+#        repository: "andriicodefresh/argocd"
+#        tag: "reporter"
 
     ## Application controller
     controller:
       # -- The number of application controller pods to run.
       # Additional replicas will cause sharding of managed clusters across number of replicas.
       replicas: 1
-      image:
-        repository: "andriicodefresh/argocd"
-        tag: "reporter"
+#      image:
+#        repository: "andriicodefresh/argocd"
+#        tag: "reporter"
 
     ## Repo Server
     repoServer:
       # -- The number of repo server pods to run
       replicas: 1
-      image:
-        repository: "andriicodefresh/argocd"
-        tag: "reporter"
+#      image:
+#        repository: "andriicodefresh/argocd"
+#        tag: "reporter"
 
 
 
     eventReporter:
       ## Amount of replicas for event reporting sharding
       replicas: 1
-      image:
-        repository: "andriicodefresh/argocd"
-        tag: "reporter-1"
-      env:
-        - name: SOURCES_SERVER_ENABLED
-          value: "true"
-        - name: SOURCES_SERVER_BASE_URL
-          value: "http://sources-server"
+#      image:
+#        repository: "andriicodefresh/argocd"
+#        tag: "reporter-1"
+      sourcesServer:
+        enabled: true
 
     applicationVersioning:
       # -- enables the Codefresh application versioning feature
