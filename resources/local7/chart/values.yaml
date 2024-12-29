@@ -59,7 +59,7 @@ gitops-runtime:
 #        repository: "andriicodefresh/argocd"
 #        tag: "reporter-1"
       sourcesServer:
-        enabled: true
+        enabled: false
 
     applicationVersioning:
       # -- enables the Codefresh application versioning feature
