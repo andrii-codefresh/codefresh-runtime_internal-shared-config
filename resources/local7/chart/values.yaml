@@ -28,7 +28,7 @@ gitops-runtime:
     server:
       service:
         type: LoadBalancer
-      replicas: 1
+      replicas: 0
 #      image:
 #        repository: "andriicodefresh/argocd"
 #        tag: "reporter"
@@ -37,7 +37,7 @@ gitops-runtime:
     controller:
       # -- The number of application controller pods to run.
       # Additional replicas will cause sharding of managed clusters across number of replicas.
-      replicas: 1
+      replicas: 0
 #      image:
 #        repository: "andriicodefresh/argocd"
 #        tag: "reporter"
@@ -45,7 +45,7 @@ gitops-runtime:
     ## Repo Server
     repoServer:
       # -- The number of repo server pods to run
-      replicas: 1
+      replicas: 0
 #      image:
 #        repository: "andriicodefresh/argocd"
 #        tag: "reporter"
@@ -54,7 +54,7 @@ gitops-runtime:
 
     eventReporter:
       ## Amount of replicas for event reporting sharding
-      replicas: 1
+      replicas: 0
 #      image:
 #        repository: "andriicodefresh/argocd"
 #        tag: "reporter-1"
