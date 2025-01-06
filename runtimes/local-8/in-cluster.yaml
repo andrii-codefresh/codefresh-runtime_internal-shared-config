@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,local-8/local-8.yaml,runtimes/local-8/**/*.yaml,runtimes/local-8/*.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,local-8/local-8.yaml,local-8/local8-gs.yaml,runtimes/local-8/**/*.yaml,runtimes/local-8/*.yaml}
       recurse: true
     path: resources
     repoURL: >-
