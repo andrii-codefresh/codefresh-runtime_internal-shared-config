@@ -17,6 +17,7 @@ gitops-runtime:
         enabled: false
       ingressUrl: http://host.docker.internal:8080
       name: local8
+      isConfigurationRuntime: true
   installer:
     skipValidation: true
   internal-router:
