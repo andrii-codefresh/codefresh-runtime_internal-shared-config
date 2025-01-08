@@ -15,7 +15,7 @@ gitops-runtime:
       codefreshHosted: false
       ingress:
         enabled: false
-      ingressUrl: http://host.docker.internal:8080
+      ingressUrl: https://andriicf-ingresshost.ngrok.io
       name: local8
       isConfigurationRuntime: true
   installer:
