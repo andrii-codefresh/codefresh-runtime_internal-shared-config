@@ -17,6 +17,7 @@ gitops-runtime:
         enabled: false
       ingressUrl: http://host.docker.internal:8080
       name: test01
+      isConfigurationRuntime: true
   installer:
     skipUsageValidation: true
     skipValidation: true
