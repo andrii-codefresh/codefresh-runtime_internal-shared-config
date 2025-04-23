@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test01
+  labels:
+    codefresh.io/entity: runtime
+    codefresh.io/internal: 'true'
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/andrii-codefresh/codefresh-runtime_internal-shared-config.git
+    targetRevision: HEAD
+    path: resources/test01/chart
+    helm:
+      releaseName: test01
+  destination:
+    namespace: test01
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
