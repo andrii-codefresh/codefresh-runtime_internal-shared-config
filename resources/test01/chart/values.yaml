@@ -1,5 +1,7 @@
 gitops-runtime:
   app-proxy:
+    image:
+      tag: 1.3446.0
     config:
       cors: http://local.codefresh.io,https://andriicf-platform.ngrok.io
   global:
