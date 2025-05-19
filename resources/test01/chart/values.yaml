@@ -21,8 +21,8 @@ gitops-runtime:
       name: test01
       isConfigurationRuntime: true
   installer:
-    skipUsageValidation: true
-    skipValidation: true
+    skipUsageValidation: false
+    skipValidation: false
   internal-router:
     service:
       nodePort: 31243
