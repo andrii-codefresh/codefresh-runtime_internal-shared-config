@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gs-test01
+  labels:
+    codefresh.io/entity: 'git-source'
+    codefresh.io/internal: 'false'
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: cf-git-sources
+  sources:
+    - repoURL: https://github.com/andrii-codefresh/gs-test01.git
+      path: .
+      targetRevision: main
+      directory:
+        include: '*'
+        exclude: ''
+        recurse: true
+  destination:
+    namespace: test01
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
