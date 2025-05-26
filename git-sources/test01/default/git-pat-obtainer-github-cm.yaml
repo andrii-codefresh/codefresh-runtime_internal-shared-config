@@ -11,7 +11,7 @@ data:
     mode: CUSTOM
     appName: ''
     secret:
-      name: github-oauth2
+      name: github-oauth2-2
       namespace: test01
       path:
         appId: appId
