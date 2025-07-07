@@ -14,7 +14,7 @@ spec:
     helm:
       releaseName: local8
   destination:
-    namespace: local8
+    namespace: gitops-runtime
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
