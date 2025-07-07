@@ -15,6 +15,7 @@ gitops-runtime:
         enabled: false
       ingressUrl: http://local.codefresh.io:9080
       name: local9
+      isConfigurationRuntime: true
   installer:
     skipValidation: false
   internal-router:
