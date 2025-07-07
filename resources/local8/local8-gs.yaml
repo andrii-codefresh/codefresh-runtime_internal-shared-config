@@ -18,7 +18,7 @@ spec:
         exclude: ''
         recurse: true
   destination:
-    namespace: gitops-runtime
+    namespace: local8
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
