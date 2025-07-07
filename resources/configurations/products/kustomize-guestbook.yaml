@@ -1,0 +1,10 @@
+apiVersion: codefresh.io/v1beta2
+kind: Product
+metadata:
+  name: kustomize-guestbook
+spec:
+  promotionTemplate:
+    versionSource:
+      file: version.yaml
+      jsonPath: $.value
+  concurrency: queue
