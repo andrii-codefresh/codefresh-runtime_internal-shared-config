@@ -1,26 +1,22 @@
 gitops-runtime:
   app-proxy:
-    replicaCount: 0
     config:
-      cors: http://local.codefresh.io,https://andriicf-platform.ngrok.io
+      cors: http://local.codefresh.io
   global:
     codefresh:
-      accountId: 6365495094c7820be5a4544d
-      url: https://2004db3a5347610d.gost.shared-services.cf-infra.com
+      accountId: 686665e2de2763ac4a3d1c2b
+      url: https://andriicf-platform.ngrok.io
       userToken:
         secretKeyRef:
           name: codefresh-user-token
           key: token
     runtime:
-      cluster: https://kubernetes.default.svc
-      codefreshHosted: false
       ingress:
         enabled: false
-      ingressUrl: https://f9e308ee98edfb21.gost.shared-services.cf-infra.com
+      ingressUrl: http://local.codefresh.io:9080
       name: local8
-      isConfigurationRuntime: true
   installer:
-    skipValidation: true
+    skipValidation: false
   internal-router:
     service:
       nodePort: 31243
