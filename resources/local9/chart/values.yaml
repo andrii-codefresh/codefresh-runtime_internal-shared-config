@@ -1,0 +1,25 @@
+gitops-runtime:
+  app-proxy:
+    config:
+      cors: http://local.codefresh.io
+  global:
+    codefresh:
+      accountId: 686665e2de2763ac4a3d1c2b
+      url: https://andriicf-platform.ngrok.io
+      userToken:
+        secretKeyRef:
+          name: codefresh-user-token
+          key: token
+    runtime:
+      ingress:
+        enabled: false
+      ingressUrl: http://local.codefresh.io:9080
+      name: local9
+  installer:
+    skipValidation: false
+  internal-router:
+    service:
+      nodePort: 31243
+      type: NodePort
+  tunnel-client:
+    enabled: false
