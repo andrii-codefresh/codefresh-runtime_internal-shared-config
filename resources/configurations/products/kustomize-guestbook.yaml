@@ -6,5 +6,5 @@ spec:
   promotionTemplate:
     versionSource:
       file: kustomization.yaml
-      jsonPath: $.images.2.newTag
+      jsonPath: $.images[0].newTag
   concurrency: queue
