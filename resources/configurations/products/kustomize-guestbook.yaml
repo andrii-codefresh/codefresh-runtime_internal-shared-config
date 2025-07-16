@@ -5,6 +5,6 @@ metadata:
 spec:
   promotionTemplate:
     versionSource:
-      file: version.yaml
-      jsonPath: $.value
+      file: kustomization.yaml
+      jsonPath: $.images['0'].newTag
   concurrency: queue
