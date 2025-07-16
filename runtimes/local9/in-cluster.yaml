@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,local9/default-git-source.yaml,local9/local9-release.yaml,runtimes/local9/**/*.yaml,runtimes/local9/*.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,configurations/**/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,local9/default-git-source.yaml,local9/local9-release.yaml,runtimes/local9/**/*.yaml,runtimes/local9/*.yaml}
       recurse: true
     path: resources
     repoURL: >-
