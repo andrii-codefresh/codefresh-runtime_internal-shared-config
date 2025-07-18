@@ -1,5 +1,6 @@
 gitops-runtime:
   app-proxy:
+    replicaCount: 0
     config:
       cors: http://local.codefresh.io
   global:
