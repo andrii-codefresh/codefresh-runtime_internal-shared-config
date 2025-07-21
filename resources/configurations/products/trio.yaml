@@ -3,4 +3,7 @@ kind: Product
 metadata:
   name: trio
 spec:
-  concurrency: queue
+  promotionTemplate:
+    versionSource:
+      file: Chart.yaml
+      jsonPath: $.appVersion
