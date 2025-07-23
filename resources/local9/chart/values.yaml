@@ -1,6 +1,6 @@
 gitops-runtime:
   app-proxy:
-    replicaCount: 1
+    replicaCount: 0
     config:
       cors: http://local.codefresh.io
   global:
@@ -14,7 +14,7 @@ gitops-runtime:
     runtime:
       ingress:
         enabled: false
-      ingressUrl: http://local.codefresh.io:9080
+      ingressUrl: https://andriicf-ingresshost.ngrok.io
       name: local9
       isConfigurationRuntime: true
   installer:
