@@ -14,7 +14,7 @@ gitops-runtime:
     runtime:
       ingress:
         enabled: false
-      ingressUrl: https://andriicf-ingresshost.ngrok.io
+      ingressUrl: http://local.codefresh.io:9080
       name: local9
       isConfigurationRuntime: true
   installer:
