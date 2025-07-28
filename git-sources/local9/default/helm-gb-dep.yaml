@@ -2,8 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: helm-gb-dep
-  annotations:
-    codefresh.io/product: version-product
 spec:
   generators:
     - list:
@@ -47,6 +45,8 @@ spec:
       name: '{{name}}'
       finalizers:
         - resources-finalizer.argocd.argoproj.io/foreground
+      annotations:
+        codefresh.io/product: version-product
     spec:
       project: default
       destination:
