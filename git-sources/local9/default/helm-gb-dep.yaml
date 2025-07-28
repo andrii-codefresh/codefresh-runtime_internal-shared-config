@@ -9,6 +9,25 @@ spec:
     - list:
         elements:
           - name: helm-gb-dep
+            ns: gb
+          - name: helm-gb-1
+            ns: gb-1
+          - name: helm-gb-2
+            ns: gb-2
+          - name: helm-gb-3
+            ns: gb-3
+          - name: helm-gb-4
+            ns: gb-4
+          - name: helm-gb-5
+            ns: gb-5
+          - name: helm-gb-6
+            ns: gb-6
+          - name: helm-gb-7
+            ns: gb-7
+          - name: helm-gb-8
+            ns: gb-8
+          - name: helm-gb-9
+            ns: gb-9
   template:
     metadata:
       name: '{{name}}'
@@ -18,7 +37,7 @@ spec:
       project: default
       destination:
         name: in-cluster
-        namespace: gb
+        namespace: '{{ns}}'
       source:
         path: helm-guestbook
         repoURL: https://github.com/andrii-codefresh/argocd-example-apps1.git
