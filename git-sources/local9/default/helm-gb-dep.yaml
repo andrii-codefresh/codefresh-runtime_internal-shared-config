@@ -47,6 +47,8 @@ spec:
         - resources-finalizer.argocd.argoproj.io/foreground
       annotations:
         codefresh.io/product: version-product
+      labels:
+        abac: users
     spec:
       project: default
       destination:
