@@ -36,6 +36,12 @@ spec:
             ns: gb-12
           - name: helm-gb-14
             ns: gb-14
+          - name: helm-gb-15
+            ns: gb-15
+          - name: helm-gb-16
+            ns: gb-16
+          - name: helm-gb-17
+            ns: gb-17
   template:
     metadata:
       name: '{{name}}'
