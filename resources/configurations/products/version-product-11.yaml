@@ -1,0 +1,9 @@
+apiVersion: codefresh.io/v1beta1
+kind: Product
+metadata:
+  name: version-product-11
+spec:
+  promotionTemplate:
+    versionSource:
+      file: values.yaml
+      jsonPath: $.int234.value
