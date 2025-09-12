@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: appset
+spec:
+  generators:
+    - list:
+        elements:
+          - name: app-1
+            ns: ns-1
+          - name: app-2
+            ns: ns-2
+          - name: app-3
+            ns: ns-3
+          - name: app-4
+            ns: ns-4
+  template:
+    metadata:
+      name: '{{name}}'
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io/foreground
+      annotations:
+        codefresh.io/product: version-product
+      labels:
+        abac: users
+    spec:
+      project: default
+      destination:
+        name: in-cluster
+        namespace: '{{ns}}'
+      source:
+        path: helm-guestbook
+        repoURL: https://github.com/andrii-codefresh/argocd-example-apps1.git
+        targetRevision: HEAD
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: false
+          allowEmpty: false
+        syncOptions:
+          - PrunePropagationPolicy=foreground
+          - Replace=false
+          - PruneLast=false
+          - Validate=true
+          - CreateNamespace=true
+          - ApplyOutOfSyncOnly=false
+          - ServerSideApply=true
+          - RespectIgnoreDifferences=false
