@@ -5,8 +5,8 @@ metadata:
   labels:
     codefresh.io/entity: 'git-source'
     codefresh.io/internal: 'false'
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
+#  finalizers:
+#  - resources-finalizer.argocd.argoproj.io
 spec:
   project: cf-git-sources
   sources:
