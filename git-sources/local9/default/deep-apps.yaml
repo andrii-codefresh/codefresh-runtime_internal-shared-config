@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: >-
+      denis-source:argoproj.io/Application:codefresh/denis-parametric-appset-source
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    app.kubernetes.io/instance: denis-source
+  name: denis-parametric-appset-source
+  namespace: arena-runner-1
+spec:
+  destination:
+    name: in-cluster
+    namespace: arena-runner-1
+  project: default
+  source:
+    helm:
+      parameters:
+        - name: destination.cluster
+          value: in-cluster
+        - name: destination.namespace
+          value: arena-runner-1
+        - name: appsCount
+          value: '5'
+        - name: replicaCount
+          value: '0'
+        - name: fullnameOverride
+          value: denis-parametric-appset
+    path: charts/parametric-appset
+    repoURL: https://github.com/denis-codefresh/ga-arena-resources
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
