@@ -4,7 +4,7 @@ metadata:
   labels:
     app.kubernetes.io/instance: denis-source
   name: denis-parametric-appset-source
-  namespace: newns
+  namespace: local9
 spec:
   destination:
     name: in-cluster
