@@ -1,11 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  annotations:
-    argocd.argoproj.io/tracking-id: >-
-      denis-source:argoproj.io/Application:codefresh/codefresh-runtime_internal-shared-config
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
   labels:
     app.kubernetes.io/instance: denis-source
   name: denis-parametric-appset-source

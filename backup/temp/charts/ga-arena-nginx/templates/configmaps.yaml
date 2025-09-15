@@ -1,0 +1,25 @@
+{{- if .Values.testConfigMaps.enabled }}
+{{- range $i := until (.Values.testConfigMaps.count | int) }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "ga-arena-nginx.fullname" $ }}-test-{{ $i }}
+  labels:
+    {{- include "ga-arena-nginx.labels" $ | nindent 4 }}
+    test-configmap: "true"
+    configmap-index: "{{ $i }}"
+data:
+  index: "{{ $i }}"
+  message: "This is test ConfigMap number {{ $i }}"
+  timestamp: "{{ now | date "2006-01-02T15:04:05Z07:00" }}"
+  data.txt: |
+    Test data for ConfigMap {{ $i }}
+    This ConfigMap is used for cluster load testing.
+    It contains {{ $.Values.testConfigMaps.dataSize }} bytes of data.
+  large-data.txt: |
+{{- range $j := until ($.Values.testConfigMaps.dataSize | int) }}
+    {{ printf "Line %d of test data for ConfigMap %d - %s\n" $j $i (randAlpha 50) }}
+{{- end }}
+{{- end }}
+{{- end }}

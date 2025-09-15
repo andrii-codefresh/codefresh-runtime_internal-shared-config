@@ -1,0 +1,33 @@
+# Default values for ga-arena-nginx
+# These values can be overridden by ApplicationSet helm parameters
+appName: ""
+appIndex: ""
+
+replicaCount: 0
+appVersionOverride: ""
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: "1.25.1"
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+# Test ConfigMaps for cluster load testing
+testConfigMaps:
+  enabled: false
+  count: 5
+  dataSize: 50
+
+deployment:
+  enabled: true
