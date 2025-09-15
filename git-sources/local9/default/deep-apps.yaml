@@ -4,11 +4,11 @@ metadata:
   labels:
     app.kubernetes.io/instance: denis-source
   name: denis-parametric-appset-source
-  namespace: ns-1
+  namespace: newns
 spec:
   destination:
     name: in-cluster
-    namespace: ns-1
+    namespace: newns
   project: default
   source:
     helm:
@@ -16,7 +16,7 @@ spec:
         - name: destination.cluster
           value: in-cluster
         - name: destination.namespace
-          value: ns-1
+          value: newns
         - name: appsCount
           value: '5'
         - name: replicaCount
