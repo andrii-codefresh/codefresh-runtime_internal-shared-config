@@ -1,0 +1,25 @@
+nameOverride: ""
+fullnameOverride: ""
+
+# ArgoCD ApplicationSet configuration
+appsCount: 3
+
+replicaCount: 0
+
+appVersionOverride: ""
+
+# Prefix for product labels
+productPrefix: arena-product-
+
+source:
+  repoURL: https://github.com/denis-codefresh/ga-arena-resources
+  targetRevision: main
+  path: charts/ga-arena-nginx
+
+
+destination:
+  cluster: ""
+  namespace: ""
+
+deployment:
+  enabled: true

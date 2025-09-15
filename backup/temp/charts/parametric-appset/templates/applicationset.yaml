@@ -1,0 +1,50 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: {{ include "parametric-appset.fullname" . }}
+  labels:
+    {{- include "parametric-appset.labels" . | nindent 4 }}
+spec:
+  generators:
+  - list:
+      elements:
+      {{- range $i := until (.Values.appsCount | int) }}
+      - appName: {{ include "parametric-appset.fullname" $ }}-{{ $i }}
+        appIndex: '{{ $i }}'
+      {{- end }}
+  template:
+    metadata:
+      name: '{{`{{appName}}`}}'
+      annotations:
+        codefresh.io/product: {{ .Values.productPrefix }}{{`{{appIndex}}`}}
+      labels:
+        {{- include "parametric-appset.labels" . | nindent 8 }}
+        app.kubernetes.io/instance: '{{`{{appName}}`}}'
+        parametric-appset.io/app-index: '{{`{{appIndex}}`}}'
+    spec:
+      project: default
+      source:
+        repoURL: {{ .Values.source.repoURL }}
+        targetRevision: {{ .Values.source.targetRevision }}
+        path: {{ if .Values.source.path }}{{ .Values.source.path }}{{ else }}charts{{ end }}
+        helm:
+          parameters:
+          - name: appName
+            value: '{{`{{appName}}`}}'
+          - name: appIndex
+            value: '{{`{{appIndex}}`}}'
+          - name: replicaCount
+            value: {{ .Values.replicaCount | quote }}
+          - name: appVersionOverride
+            value: {{ .Values.appVersionOverride | quote }}
+          - name: "deployment.enabled"
+            value: {{ .Values.deployment.enabled | quote }}
+      destination:
+        name: {{ if .Values.destination.cluster }}{{ .Values.destination.cluster }}{{ else }}in-cluster{{ end }}
+        namespace: {{ if .Values.destination.namespace }}{{ .Values.destination.namespace }}{{ else }}'{{`{{appName}}`}}'{{ end }}
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
