@@ -9,11 +9,11 @@ metadata:
   labels:
     app.kubernetes.io/instance: denis-source
   name: denis-parametric-appset-source
-  namespace: arena-runner-1
+  namespace: ns-1
 spec:
   destination:
     name: in-cluster
-    namespace: arena-runner-1
+    namespace: ns-1
   project: default
   source:
     helm:
@@ -21,7 +21,7 @@ spec:
         - name: destination.cluster
           value: in-cluster
         - name: destination.namespace
-          value: arena-runner-1
+          value: ns-1
         - name: appsCount
           value: '5'
         - name: replicaCount
