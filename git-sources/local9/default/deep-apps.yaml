@@ -24,7 +24,7 @@ spec:
         - name: fullnameOverride
           value: denis-parametric-appset
     path: backup/temp/charts/parametric-appset
-    repoURL: https://github.com/andrii-codefresh/codefresh-runtime_internal-shared-config
+    repoURL: https://github.com/andrii-codefresh/codefresh-runtime_internal-shared-config.git
     targetRevision: HEAD
   syncPolicy:
     automated:
