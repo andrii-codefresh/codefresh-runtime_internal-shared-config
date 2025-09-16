@@ -16,7 +16,7 @@ spec:
     helm:
       parameters:
         - name: destination.cluster
-          value: in-cluster
+          value: dest-cluster
         - name: destination.namespace
           value: newns
         - name: appsCount
