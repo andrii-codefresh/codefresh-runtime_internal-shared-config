@@ -6,4 +6,4 @@ version: 0.21.0
 dependencies:
   - name: gitops-runtime
     repository: oci://quay.io/codefresh/dev
-    version: 0.0.0-cr-28975-quotes
+    version: 0.0.0-feat-remove-cluster-mutex
