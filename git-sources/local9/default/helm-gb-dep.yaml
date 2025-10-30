@@ -6,50 +6,72 @@ spec:
   generators:
     - list:
         elements:
-          - name: helm-gb-dep
+          - name: helm-gb-0001
             ns: gb
-          - name: helm-gb-1
+            cluster: wrong-cluster
+          - name: helm-gb-0002
             ns: gb-1
-          - name: helm-gb-2
+            cluster: wrong-cluster
+          - name: helm-gb-0003
             ns: gb-2
-          - name: helm-gb-3
+            cluster: wrong-cluster
+          - name: helm-gb-0004
             ns: gb-3
-          - name: helm-gb-4
+            cluster: wrong-cluster
+          - name: helm-gb-0005
             ns: gb-4
-          - name: helm-gb-5
+            cluster: wrong-cluster
+          - name: helm-gb-0006
             ns: gb-5
-          - name: helm-gb-6
+            cluster: wrong-cluster
+          - name: helm-gb-0007
             ns: gb-6
-          - name: helm-gb-7
+            cluster: wrong-cluster
+          - name: helm-gb-0008
             ns: gb-7
-          - name: helm-gb-8
+            cluster: wrong-cluster
+          - name: helm-gb-0009
             ns: gb-8
-          - name: helm-gb-9
+            cluster: wrong-cluster
+          - name: helm-gb-0010
             ns: gb-9
-          - name: helm-gb-10
+            cluster: wrong-cluster
+          - name: helm-gb-0011
             ns: gb-10
-          - name: helm-gb-11
+            cluster: wrong-cluster
+          - name: helm-gb-0012
             ns: gb-11
-          - name: helm-gb-12
+            cluster: wrong-cluster
+          - name: helm-gb-0013
             ns: gb-12
-          - name: helm-gb-14
+            cluster: wrong-cluster
+          - name: helm-gb-0014
             ns: gb-14
-          - name: helm-gb-15
+            cluster: wrong-cluster
+          - name: helm-gb-0015
             ns: gb-15
-          - name: helm-gb-16
+            cluster: wrong-cluster
+          - name: helm-gb-0016
             ns: gb-16
-          - name: helm-gb-17
+            cluster: wrong-cluster
+          - name: helm-gb-0017
             ns: gb-17
-          - name: helm-gb-18
+            cluster: wrong-cluster
+          - name: helm-gb-0018
             ns: gb-17
-          - name: helm-gb-19
+            cluster: wrong-cluster
+          - name: helm-gb-0019
             ns: gb-17
-          - name: helm-gb-20
+            cluster: wrong-cluster
+          - name: helm-gb-0020
             ns: gb-17
-          - name: helm-gb-21
+            cluster: wrong-cluster
+          - name: helm-gb-0021
             ns: gb-17
-          - name: helm-gb-22
+            cluster: wrong-cluster
+          - name: helm-gb-0022
             ns: gb-17
+            cluster: wrong-cluster
   template:
     metadata:
       name: '{{name}}'
@@ -62,7 +84,7 @@ spec:
     spec:
       project: default
       destination:
-        name: in-cluster
+        name: '{{cluster}}'
         namespace: '{{ns}}'
       source:
         path: helm-guestbook
