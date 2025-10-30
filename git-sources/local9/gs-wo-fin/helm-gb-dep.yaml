@@ -8,47 +8,12 @@ spec:
         elements:
           - name: app-1
             ns: ns-1
-            cluster: in-cluster
           - name: app-2
             ns: ns-2
-            cluster: in-cluster
           - name: app-3
             ns: ns-3
-            cluster: in-cluster
           - name: app-4
             ns: ns-4
-            cluster: in-cluster
-
-          - name: app-0001
-            ns: ns
-            cluster: wrong-cluster
-          - name: app-0002
-            ns: ns
-            cluster: wrong-cluster
-          - name: app-0003
-            ns: ns
-            cluster: wrong-cluster
-          - name: app-0004
-            ns: ns
-            cluster: wrong-cluster
-          - name: app-0005
-            ns: ns
-            cluster: wrong-cluster
-          - name: app-0006
-            ns: ns
-            cluster: wrong-cluster
-          - name: app-0007
-            ns: ns
-            cluster: wrong-cluster
-          - name: app-0008
-            ns: ns
-            cluster: wrong-cluster
-          - name: app-0009
-            ns: ns
-            cluster: wrong-cluster
-          - name: app-0010
-            ns: ns
-            cluster: wrong-cluster
   template:
     metadata:
       name: '{{name}}'
@@ -61,7 +26,7 @@ spec:
     spec:
       project: default
       destination:
-        name: '{{cluster}}'
+        name: in-cluster
         namespace: '{{ns}}'
       source:
         path: helm-guestbook
