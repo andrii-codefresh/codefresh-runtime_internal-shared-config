@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: abac-app1-dev
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io/foreground
+  labels:
+    abac: users
+  annotations:
+    codefresh.io/product: product-abac
+spec:
+  project: default
+  destination:
+    name: in-cluster
+    namespace: abac-app1-dev
+  source:
+    path: abac/dev/app1
+    repoURL: https://github.com/andrii-codefresh/promotion-flow-apps-examples.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+      allowEmpty: false
+    syncOptions:
+      - PrunePropagationPolicy=foreground
+      - Replace=false
+      - PruneLast=false
+      - Validate=true
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=false
+      - ServerSideApply=true
+      - RespectIgnoreDifferences=false
