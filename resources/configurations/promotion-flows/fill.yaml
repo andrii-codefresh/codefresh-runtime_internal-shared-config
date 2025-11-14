@@ -4,6 +4,8 @@ metadata:
   name: fill
   annotations:
     description: ""
+  labels:
+    spoton.com/domain: core-services
 spec:
   triggerEnvironment: dev
   steps:
