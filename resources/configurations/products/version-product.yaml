@@ -1,9 +1,23 @@
-apiVersion: codefresh.io/v1beta1
+apiVersion: codefresh.io/v1beta2
 kind: Product
 metadata:
   name: version-product
+  labels:
+    spoton.com/domain: core-services
 spec:
+  promotionFlows:
+    - name: fill
+      gitTriggerSelectors:
+        - key: commitMessage
+          operator: In
+          values:
+            - '*promotion*'
   promotionTemplate:
     versionSource:
       file: values.yaml
       jsonPath: $.int234.value
+    promotion:
+      values.yaml:
+        jsonPaths:
+          - $.int234.value
+  concurrency: terminate
