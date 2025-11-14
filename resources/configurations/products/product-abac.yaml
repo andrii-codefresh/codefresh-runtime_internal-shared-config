@@ -1,0 +1,8 @@
+apiVersion: codefresh.io/v1beta2
+kind: Product
+metadata:
+  name: product-abac
+  labels:
+    spoton.com/domain: core-services
+spec:
+  concurrency: queue
