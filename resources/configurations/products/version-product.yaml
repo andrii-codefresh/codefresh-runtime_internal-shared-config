@@ -2,6 +2,8 @@ apiVersion: codefresh.io/v1beta2
 kind: Product
 metadata:
   name: version-product
+  labels:
+    spoton.com/domain: core-services
 spec:
   promotionFlows:
     - name: fill
