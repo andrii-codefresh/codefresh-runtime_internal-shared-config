@@ -6,6 +6,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io/foreground
   labels:
     abac: users
+    label.com/slash: foo
   annotations:
     codefresh.io/product: product-abac
 spec:
