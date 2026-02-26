@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: trio
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: demo-dev
+            short: dev
+            ns: dev
+          - cluster: demo-qa
+            short: qa
+            ns: qa
+          - cluster: demo-staging
+            short: staging
+            ns: staging
+
+  template:
+    metadata:
+      name: trioapp-{{short}}
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io
+      annotations:
+        argocd.argoproj.io/manifest-generate-paths: '.'
+        codefresh.io/product: trio
+        codefresh.io/app-group: trio
+    spec:
+      destination:
+        name: 'in-cluster'
+        namespace: '{{ns}}'
+      source:
+        path: 'manifests/trio-app/aperture-{{short}}'
+        repoURL: 'https://github.com/aperture-sci/DevOps'
+        targetRevision: main
+      project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
