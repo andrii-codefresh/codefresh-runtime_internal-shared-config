@@ -1,5 +1,6 @@
 gitops-runtime:
   app-proxy:
+    replicaCount: 0
     config:
       cors: http://local.codefresh.io,https://andriicf-platform.ngrok.io
   global:
@@ -19,7 +20,7 @@ gitops-runtime:
       codefreshHosted: false
       ingress:
         enabled: false
-      ingressUrl: http://host.docker.internal:8080
+      ingressUrl: https://andriicf-ingresshost.ngrok.io
       name: localx
   installer:
     skipUsageValidation: true
