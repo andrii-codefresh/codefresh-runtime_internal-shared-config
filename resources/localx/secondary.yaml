@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: secondary
+  labels:
+    codefresh.io/entity: 'git-source'
+    codefresh.io/internal: 'false'
+spec:
+  project: cf-git-sources
+  sources:
+    - repoURL: https://github.com/andrii-codefresh/codefresh-runtime_internal-shared-config.git
+      path: secondary
+      targetRevision: main
+      directory:
+        include: '*'
+        exclude: ''
+        recurse: true
+  destination:
+    namespace: localx
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
