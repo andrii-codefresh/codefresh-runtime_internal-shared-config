@@ -22,6 +22,7 @@ gitops-runtime:
         enabled: false
       ingressUrl: https://andriicf-ingresshost.ngrok.io
       name: localx
+      isConfigurationRuntime: true
   installer:
     skipUsageValidation: true
     skipValidation: false
