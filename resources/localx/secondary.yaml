@@ -8,9 +8,9 @@ metadata:
 spec:
   project: cf-git-sources
   sources:
-    - repoURL: https://github.com/andrii-codefresh/codefresh-runtime_internal-shared-config.git
-      path: git-sources/localx/secondary
-      targetRevision: main
+    - repoURL: https://gitlab.com/andrii9/git-source.git
+      path: localx/secondary
+      targetRevision: master
       directory:
         include: '*'
         exclude: ''
