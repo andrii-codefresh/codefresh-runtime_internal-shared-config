@@ -28,8 +28,3 @@ spec:
       selfHeal: true
     syncOptions:
       - allowEmpty=true
-  ignoreDifferences:
-    - group: argoproj.io
-      kind: Application
-      jqPathExpressions:
-        - '.metadata.finalizers[] | select(. == "pre-delete-finalizer.argocd.argoproj.io" or . == "pre-delete-finalizer.argocd.argoproj.io/cleanup")'
