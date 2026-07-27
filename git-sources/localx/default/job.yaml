@@ -1,0 +1,53 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: '100'
+    renderedFile: hooks
+#  labels:
+#    app.kubernetes.io/instance: pipeline-demo-node.prod.guse4.mgmt.primary
+#    jira-project-key: INFRA
+#    jira-team-uuid: c518a5a4-d2d8-427c-bb9e-1e5f2f90e3f6
+#    pom-entity-id: p-infra-dp-dp
+#    pom-portfolio-id: p-infra
+#    pom-product-id: p-infra-dp-dp
+#    pom-productgroup-id: p-infra-dp
+#    pom-team-id: t-infra-dp-dp
+  name: post-sync.pipeline-demo-node-prod-primary
+  namespace: default
+spec:
+  backoffLimit: 3
+  completionMode: NonIndexed
+  completions: 1
+  manualSelector: false
+  parallelism: 1
+  podReplacementPolicy: TerminatingOrFailed
+  suspend: false
+  template:
+    metadata:
+      annotations:
+        cluster-autoscaler.kubernetes.io/safe-to-evict: 'false'
+    spec:
+      containers:
+        - command:
+            - bash
+            - '-c'
+            - >
+              echo "Log in build-api"
+          image: alpine
+          imagePullPolicy: IfNotPresent
+          name: post-sync
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /tmp
+              name: empty-volume
+      dnsPolicy: ClusterFirst
+      restartPolicy: OnFailure
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - emptyDir: {}
+          name: empty-volume
