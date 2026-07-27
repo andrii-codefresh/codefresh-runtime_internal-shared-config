@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - command:
-            - bash
+            - /bin/sh
             - '-c'
             - >
               echo "Log in build-api"
